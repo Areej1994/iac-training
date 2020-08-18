@@ -1,6 +1,6 @@
 # Azure CLI Create VM in bash (use bash installed with git for windows)
 
-* https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?tutorial-step=1&view=azure-cli-latest 
+# https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?tutorial-step=1&view=azure-cli-latest 
 
 az login
 az group create --name TutorialResources --location eastus
