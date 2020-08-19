@@ -5,8 +5,8 @@
 # variable
 
 $x_i = 1
-$x_s = '123$i'
-$x_se = "xxx$($s)xxx  `$"
+$x_s = '123$x_i'
+$x_se = "xxx$($x_s)xxx  `$"
 
 Get-Variable
 
