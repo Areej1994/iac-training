@@ -14,9 +14,11 @@
             "metadata": {
                 "description": "User or service principal object ID goes here"
             }
-        }
+        } 
     },
-    "variables": {},
+    "variables": {
+        "sercetValue": "[guid(subscription().subscriptionId)]"
+    },
     "resources": [
         {
             "type": "Microsoft.KeyVault/vaults",
@@ -61,7 +63,7 @@
                         "[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]"
                     ],
                     "properties": {
-                        "value": "secretValue"
+                        "value": "[variables('sercetValue')]"
                     }
                 }
             ]
