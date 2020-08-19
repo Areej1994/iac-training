@@ -82,6 +82,17 @@ $deployment = New-AzResourceGroupDeployment `
 
 echo $deployment
 
+# 6-output and template-function.json
+# example of output andtemplate functions 
+# used example from https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-logical
+$templateFile = "6-output-and-template-function.json"
+$deployment = New-AzResourceGroupDeployment `
+    -Name 6-output-and-template-function `
+    -ResourceGroupName "$myPrefix-arm-templates-rg" `
+    -TemplateFile $templateFile 
+
+echo $deployment
+
 echo $deployment.Outputs.storageEndpoint.value.blob.value
 
 # 7-use-exported-template
