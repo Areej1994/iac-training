@@ -3,11 +3,19 @@
       . .\1-create-website-local-dsc.ps1
       WebsiteTest
     
+      # create required file 
+      mkdir c:\test
+      "<head></head><body><p>Hello World!</p></body>"  > c:\test\index.htm
+
+
       # start deployment locally
       Start-DscConfiguration .\WebsiteTest
     
       # test status 
       Get-DscConfigurationStatus
+
+      # run Start-DscConfiguration command with -UseExisting parameter to finish the existing configuration.
+      Start-DscConfiguration -UseExisting
 #>
 Configuration WebsiteTest {
     # Create a website with Desired State Configuration and deploy loccaly
