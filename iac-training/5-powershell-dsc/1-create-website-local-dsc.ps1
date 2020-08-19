@@ -1,5 +1,10 @@
+<#
+    .EXAMPLE
+    . .\1-create-website-local-dsc.ps1
+    WebsiteTest
+#>
 Configuration WebsiteTest {
-    # Create a website with Desired State Configuration
+    # Create a website with Desired State Configuration and deploy loccaly
     # https://docs.microsoft.com/en-us/powershell/scripting/dsc/quickstarts/website-quickstart?view=powershell-7
 
     # Import the module that contains the resources we're using.
