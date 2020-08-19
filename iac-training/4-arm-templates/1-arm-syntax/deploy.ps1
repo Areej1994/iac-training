@@ -140,10 +140,10 @@ Remove-AzResourceGroup `
 # Open Azure Quickstart templates https://azure.microsoft.com/resources/templates/
 # use teplate from here https://azure.microsoft.com/resources/templates/101-webapp-basic-linux/
 $webApp = "$myPrefix-app"
-$templateFile = "10-paramter-files.json"
+$templateFile = "10-parameter-files.json"
 
 #Deploy development resource group
-$parameterFileDev="10-paramters.dev.json"
+$parameterFileDev="10-parameters.dev.json"
 $devResourceGroup = "$myPrefix-arm-templates-dev-rg"
 
 New-AzResourceGroup `
@@ -157,7 +157,7 @@ New-AzResourceGroupDeployment `
   -TemplateParameterFile $parameterFileDev
 
 #Deploy production resource group
-$parameterFilePrd="10-paramters.prd.json"
+$parameterFilePrd="10-parameters.prd.json"
 $prdResourceGroup = "$myPrefix-arm-templates-prd-rg"
 
 New-AzResourceGroup `
