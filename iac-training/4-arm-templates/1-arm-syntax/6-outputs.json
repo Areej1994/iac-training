@@ -1,1 +1,29 @@
-https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-add-outputs?tabs=azure-powershell
+// https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-add-outputs?tabs=azure-powershell
+
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "resourceName": {
+            "type": "string",
+            "metadata": {
+              "description": "<USER ASSIGNED IDENTITY NAME>"
+            }
+          }
+    },
+    "resources": [
+      {
+        "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+        "name": "[parameters('resourceName')]",
+        "apiVersion": "2018-11-30",
+        "location": "[resourceGroup().location]"
+      }
+    ],
+    "outputs": {
+        // In this case outputs the identity name once it is created, to be used in a subsequent task
+        "identityName": {
+            "type": "string",
+            "value": "[parameters('resourceName')]"
+        }
+    }
+  }
