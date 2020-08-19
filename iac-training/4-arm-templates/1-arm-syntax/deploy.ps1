@@ -84,7 +84,8 @@ echo $deployment
 
 echo $deployment.Outputs.storageEndpoint.value.blob.value
 
-# 7-outputs.json
+# 7-use-exported-template
+# create new app service plan and export template
 # supply only prefix for the storage name and SKU for the stroage account 
 $templateFile = "7-use-exported-template.json"
 New-AzResourceGroupDeployment `
@@ -94,6 +95,72 @@ New-AzResourceGroupDeployment `
     -storagePrefix "$myPrefix" `
     -storageSKU Standard_LRS
 
+# 8-use-quickstart-template.json
+# Open Azure Quickstart templates https://azure.microsoft.com/resources/templates/
+# use teplate from here https://azure.microsoft.com/resources/templates/101-webapp-basic-linux/
+$webApp = "$myPrefix-app"
+$templateFile = "8-use-quickstart-template.json"
+New-AzResourceGroupDeployment `
+    -Name 8-use-quickstart-template `
+    -ResourceGroupName "$myPrefix-arm-templates-rg" `
+    -TemplateFile $templateFile `
+    -storagePrefix "$myPrefix" `
+    -storageSKU Standard_LRS `
+    -webAppName $webApp
+
+# 9-tags.json
+# Open Azure Quickstart templates https://azure.microsoft.com/resources/templates/
+# use teplate from here https://azure.microsoft.com/resources/templates/101-webapp-basic-linux/
+$webApp = "$myPrefix-app"
+$templateFile = "9-tags.json"
+New-AzResourceGroupDeployment `
+    -Name 9-tags `
+    -ResourceGroupName "$myPrefix-arm-templates-rg" `
+    -TemplateFile $templateFile `
+    -storagePrefix "$myPrefix" `
+    -storageSKU Standard_LRS `
+    -webAppName $webApp
+  
 # Clean up resources
 Remove-AzResourceGroup `
   -Name "$myPrefix-arm-templates-rg"
+
+# 10-paramter-files.json
+# Open Azure Quickstart templates https://azure.microsoft.com/resources/templates/
+# use teplate from here https://azure.microsoft.com/resources/templates/101-webapp-basic-linux/
+$webApp = "$myPrefix-app"
+$templateFile = "10-paramter-files.json"
+
+#Deploy development resource group
+$parameterFileDev="10-paramters.dev.json"
+$devResourceGroup = "$myPrefix-arm-templates-dev-rg"
+
+New-AzResourceGroup `
+  -Name $devResourceGroup `
+  -Location "Central US"
+
+New-AzResourceGroupDeployment `
+  -Name devenvironment `
+  -ResourceGroupName $devResourceGroup `
+  -TemplateFile $templateFile `
+  -TemplateParameterFile $parameterFileDev
+
+#Deploy production resource group
+$parameterFilePrd="10-paramters.prd.json"
+$prdResourceGroup = "$myPrefix-arm-templates-prd-rg"
+
+New-AzResourceGroup `
+-Name $prdResourceGroup `
+-Location "Central US"
+
+New-AzResourceGroupDeployment `
+-Name devenvironment `
+-ResourceGroupName $prdResourceGroup `
+-TemplateFile $templateFile `
+-TemplateParameterFile $parameterFilePrd
+
+# Clean up resources
+Remove-AzResourceGroup `
+  -Name $devResourceGroup
+Remove-AzResourceGroup `
+  -Name $prdResourceGroup
