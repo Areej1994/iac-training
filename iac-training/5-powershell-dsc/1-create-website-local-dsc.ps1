@@ -1,7 +1,13 @@
 <#
     .EXAMPLE
-    . .\1-create-website-local-dsc.ps1
-    WebsiteTest
+      . .\1-create-website-local-dsc.ps1
+      WebsiteTest
+    
+      # start deployment locally
+      Start-DscConfiguration .\WebsiteTest
+    
+      # test status 
+      Get-DscConfigurationStatus
 #>
 Configuration WebsiteTest {
     # Create a website with Desired State Configuration and deploy loccaly
