@@ -14,7 +14,9 @@ New-AzResourceGroup `
   -Name "$myPrefix-arm-templates-rg" `
   -Location "Central US"
 
+
 # 1-empty.json
+# run from root folder of this script
 # https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell
 $templateFile = "1-empty.json"
 New-AzResourceGroupDeployment `
@@ -57,13 +59,41 @@ New-AzResourceGroupDeployment `
     -storageName "$uniqueName" `
     -storageSKU Standard_LRS
 
+# 5-variables.json
+# supply only prefix for the storage name and SKU for the stroage account 
+$templateFile = "5-variables.json"
+New-AzResourceGroupDeployment `
+    -Name 5-variables `
+    -ResourceGroupName "$myPrefix-arm-templates-rg" `
+    -Mode Complete `
+    -TemplateFile $templateFile `
+    -storagePrefix "$myPrefix" `
+    -storageSKU Standard_LRS
 
-# delete content of resource group via empty deployment
-if (0) {
-    $templateFile = "1-empty.json"
-    New-AzResourceGroupDeployment `
-        -Name 1-empty-complete `
-        -ResourceGroupName "$myPrefix-arm-templates-rg" `
-        -Mode Complete `
-        -TemplateFile $templateFile  
-}
+# 6-outputs.json
+# supply only prefix for the storage name and SKU for the stroage account 
+$templateFile = "6-outputs.json"
+$deployment = New-AzResourceGroupDeployment `
+    -Name 6-outputs `
+    -ResourceGroupName "$myPrefix-arm-templates-rg" `
+    -TemplateFile $templateFile `
+    -storagePrefix "$myPrefix" `
+    -storageSKU Standard_LRS
+
+echo $deployment
+
+echo $deployment.Outputs.storageEndpoint.value.blob.value
+
+# 7-outputs.json
+# supply only prefix for the storage name and SKU for the stroage account 
+$templateFile = "7-use-exported-template.json"
+New-AzResourceGroupDeployment `
+    -Name 7-use-exported-template `
+    -ResourceGroupName "$myPrefix-arm-templates-rg" `
+    -TemplateFile $templateFile `
+    -storagePrefix "$myPrefix" `
+    -storageSKU Standard_LRS
+
+# Clean up resources
+Remove-AzResourceGroup `
+  -Name "$myPrefix-arm-templates-rg"
