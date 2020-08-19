@@ -5,6 +5,7 @@
 * run login command 
 ```
 az login
+az account list
 ```
 
 # Azure CLI in Docker

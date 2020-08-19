@@ -2,10 +2,10 @@
 
 # https://docs.microsoft.com/en-us/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-iis-using-dsc
 
-# Variables for common values
-$resourceGroup = "myResourceGroup"
-$location = "westeurope"
-$vmName = "myVM"
+# Variables for common values - adjust Resource group name
+$resourceGroup = 'vb-iac-taining-cli-rg'
+$location = "eastus"
+$vmName = "TutorialDSC"
 
 # Create a resource group
 New-AzResourceGroup -Name $resourceGroup -Location $location
@@ -19,10 +19,11 @@ New-AzVM `
   -Name $vmName `
   -Location $location `
   -ImageName "Win2016Datacenter" `
-  -VirtualNetworkName "myVnet" `
-  -SubnetName "mySubnet" `
-  -SecurityGroupName "myNetworkSecurityGroup" `
-  -PublicIpAddressName "myPublicIp" `
+  -Size Standard_B2S `
+  -VirtualNetworkName "myVnetDSC" `
+  -SubnetName "mySubnetDSC" `
+  -SecurityGroupName "myNetworkSecurityGroupDSC" `
+  -PublicIpAddressName "myPublicIpDSC" `
   -Credential $cred `
   -OpenPorts 80
 
