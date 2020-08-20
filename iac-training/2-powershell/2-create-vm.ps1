@@ -1,13 +1,12 @@
-# Powershell - Create VM with az module commands
-
-# https://docs.microsoft.com/en-us/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm-quick
-
 <#
- Get-AzContext
- Get-AzSubscription
- Set-AzContext -SubscriptionName 'You name of the subscription'
- Get-ExecutionPolicy
- Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+  .SYNOPSIS 
+    Create VM with az module commands
+  .NOTES
+    https://docs.microsoft.com/en-us/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm-quick
+  
+  .EXAMPLE
+    1) ensure that you are loged in
+    2) change resource group name as required when working in group of people
 #>
 
 # Variables for common values - adjust Resource group name

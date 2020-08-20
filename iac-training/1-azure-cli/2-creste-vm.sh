@@ -1,6 +1,5 @@
 # Azure CLI Create VM in bash (use bash installed with git for windows or WSL)
 
-
 # https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?tutorial-step=1&view=azure-cli-latest 
 
 az login
