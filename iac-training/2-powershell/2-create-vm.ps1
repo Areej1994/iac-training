@@ -2,6 +2,14 @@
 
 # https://docs.microsoft.com/en-us/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm-quick
 
+<#
+ Get-AzContext
+ Get-AzSubscription
+ Set-AzContext -SubscriptionName 'You name of the subscription'
+ Get-ExecutionPolicy
+ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+#>
+
 # Variables for common values - adjust Resource group name
 $resourceGroup = 'vb-iac-taining-cli-rg'
 $location = "eastus"
