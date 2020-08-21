@@ -72,12 +72,13 @@ New-AzResourceGroupDeployment `
 
 # 6-outputs.json
 # supply only prefix for the storage name and SKU for the stroage account 
+$storagePrefix = "$myPrefix" -replace "-", ""
 $templateFile = "6-outputs.json"
 $deployment = New-AzResourceGroupDeployment `
     -Name 6-outputs `
     -ResourceGroupName "$myPrefix-arm-templates-rg" `
     -TemplateFile $templateFile `
-    -storagePrefix "$myPrefix" `
+    -storagePrefix "$storagePrefix" `
     -storageSKU Standard_LRS
 
 echo $deployment
@@ -98,12 +99,13 @@ echo $deployment.Outputs.storageEndpoint.value.blob.value
 # 7-use-exported-template
 # create new app service plan and export template
 # supply only prefix for the storage name and SKU for the stroage account 
+$storagePrefix = "$myPrefix" -replace "-", ""
 $templateFile = "7-use-exported-template.json"
 New-AzResourceGroupDeployment `
     -Name 7-use-exported-template `
     -ResourceGroupName "$myPrefix-arm-templates-rg" `
     -TemplateFile $templateFile `
-    -storagePrefix "$myPrefix" `
+    -storagePrefix "$storagePrefix" `
     -storageSKU Standard_LRS
 
 # 8-use-quickstart-template.json
