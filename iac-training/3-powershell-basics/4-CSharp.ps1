@@ -1,16 +1,15 @@
-﻿
-<#
-$Assem = (
-...add referenced assemblies here...
-    )
+﻿<#
+  .NOTES
+    $Assem = (
+    ...add referenced assemblies here...
+        )
 
-$Source = @"
-...add C# source code here...
-"@
+    $Source = @"
+    ...add C# source code here...
+    "@
 
-Add-Type -ReferencedAssemblies $Assem -TypeDefinition $Source -Language CSharp 
+    Add-Type -ReferencedAssemblies $Assem -TypeDefinition $Source -Language CSharp 
 #>
-
 
 # create C# DLL via add-type
 param 

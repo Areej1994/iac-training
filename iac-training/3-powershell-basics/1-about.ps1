@@ -1,6 +1,8 @@
-﻿
-# https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/?view=powershell-6
-# https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-6
+﻿<#
+  .NOTES
+    https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/?view=powershell-6
+    https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-6
+#>
 
 # variable
 

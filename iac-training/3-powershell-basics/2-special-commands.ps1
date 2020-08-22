@@ -1,5 +1,7 @@
-﻿# https://docs.microsoft.com/en-us/powershell/scripting/install/windows-powershell-system-requirements?view=powershell-6
-
+﻿<#
+  .NOTES
+  # https://docs.microsoft.com/en-us/powershell/scripting/install/windows-powershell-system-requirements?view=powershell-6
+#>
 param
 ()
 

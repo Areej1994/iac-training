@@ -21,13 +21,13 @@ This course will provide you in an virtual hands-on session how to setup infrast
 	* 13:30 – 16:00  Part 5 - Practical Hints and Real life scenarios
 
 # Prerequisites for participants
-	* Knowledge of Azure DevOps
-	* Basic Knowledge of Git
-	* Azure 
-		* owner rights on Azure Subscription in order to create resources
-		* enough of credit to run the exercises 
-		* have enough of privileges on local machine to install used software (e.g. PowerShell modules or  Azure CLI, optionally running from VM in Azure)
-        * enough rights on Azure AD (tenant) to create new service principal identity or use existing one ( demonstrate Azure DevOps Service connection and demonstrate deployment to subscription via Azure Pipeline)
+* Knowledge of Azure DevOps
+* Basic Knowledge of Git
+* Azure 
+	* owner rights on Azure Subscription in order to create resources
+	* enough of credit to run the exercises 
+	* have enough of privileges on local machine to install used software (e.g. PowerShell modules or  Azure CLI, optionally running from VM in Azure)
+	* enough rights on Azure AD (tenant) to create new service principal identity or use existing one ( demonstrate Azure DevOps Service connection and demonstrate deployment to subscription via Azure Pipeline)
 
 # Training Overview  
 * Part1 - What is Infrastructure as Code (IaC)

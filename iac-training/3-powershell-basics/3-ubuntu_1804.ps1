@@ -1,7 +1,9 @@
-﻿# linux powershell 
-# windows subsystem
-# https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6#ubuntu-1810
-
+﻿<#
+  .NOTES
+    # linux powershell 
+    # windows subsystem
+    # https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6#ubuntu-1810
+#>
 get-module az
 
 Login-AzAccount
