@@ -21,29 +21,29 @@ This course will provide you in an virtual hands-on session how to setup infrast
 	* 13:30 – 16:00  Part 5 - Practical Hints and Real life scenarios
 
 # Prerequisites for participants
-	* Knowledge of Azure Devops
+	* Knowledge of Azure DevOps
 	* Basic Knowledge of Git
 	* Azure 
-		○ administrative right on Azure AD (tenant) that is connected to subscription in order to create new identities
-		○ owner rights on Azure Subscription in order to create resources
-		○ enough of credit to run the exercises 
-		○ have enough of privileges on local machine to install used software (e.g. PowerShell modules or  Azure CLI, optionally running from VM in Azure)
+		* owner rights on Azure Subscription in order to create resources
+		* enough of credit to run the exercises 
+		* have enough of privileges on local machine to install used software (e.g. PowerShell modules or  Azure CLI, optionally running from VM in Azure)
+        * enough rights on Azure AD (tenant) to create new service principal identity or use existing one ( demonstrate Azure DevOps Service connection and demonstrate deployment to subscription via Azure Pipeline)
 
 # Training Overview  
 * Part1 - What is Infrastructure as Code (IaC)
-	* In this session we will explore general principles of Introduction to IaC, types of IaC (imperative vs declarative), types of infrastructure in Azure (IaaS, Paas, SaaS), Shared security responsibility
+	* In this session we will explore general principles of Introduction to IaC, types of IaC (imperative vs declarative), types of infrastructure in Azure (IaaS, PaaS, SaaS), Shared security responsibility
 	
 * Part2 - Microsoft Azure Automation
 	* In this session we will look at Azure Resource Managed Concept, use Azure Cloud Shell, API, Azure Classic, explore the  
-	Azure AD and relationshipt to tenant, subscription, managed group. Explore specific Azure Resources in respect to IaC- networking, security, databases, VMs, etc. and explore influence of Cloud/Solution Architecture on IaC
+	Azure AD and relationships to tenant, subscription, managed group. Explore specific Azure Resources in respect to IaC- networking, security, databases, VMs, etc. and explore influence of Cloud/Solution Architecture on IaC
 
 * Part 3 - Setting up an IaC Environment (ARM, PowerShell, Azure CLI)
-	* In this session we will use Azure CLI, Powershell Azure AZ locally, use ARM templates to create Infractructure in Azure via IaC, explore ARM syntax details and well as way to extend the ARM templates. Will talk about Powershell DSC and Azure Automation (DSC, Runbooks, etc.). Will look at usage of Visual Studio Code to Deploy  ARM via Azure CLI or Powershell.
+	* In this session we will Install use Azure CLI, Powershell Azure AZ locally, use ARM templates to create Infrastructure in Azure via IaC, explore ARM syntax details and well as way to extend the ARM templates. Will talk about Powershell DSC and Azure Automation (DSC, RunBooks, etc.). Will look at usage of Visual Studio Code to Deploy  ARM via Azure CLI or Powershell.
 * Part 4 - IaC Automation Pipelines
 	* Configuration as a Code
 		* In this session we will focus on configuration of IaC for the purpose of multi environment configuration. Explore Azure DevOps  and KeyVault  integration (Library vs Task), Link ARM  to Key Vault secrets and VM Extension to configure Settings on VM
 	* Continuous Integration/Continuous Deployment (CI/CD)
-		* In this session we will explore Azure DevOps and prerequisites like Service Principals and Managed Identity to automaticaly deploy IaC, explore differences between Linux and Windows in respect to the configuration and see additional components reuired for deployment On-premise vs in Cloud via Build agents (exercise: register the VM as a build agent)
+		* In this session we will explore Azure DevOps and prerequisites like Service Principals and Managed Identity to automatically deploy IaC, explore differences between Linux and Windows in respect to the configuration and see additional components required for deployment On-premise vs in Cloud via Build agents (exercise: register the VM as a build agent)
 * Part 5 - Practical Hints and Real life scenarios
 	* In this session we will try to answer any Q&A, Focus on areas which require more attention based on the group skills. Looking at real life examples and lessons learned from real projects. Based on the time we will cover some additional topics like lock resources, tag Resources, move resources or  Modern Engineering and IaC.
 
@@ -55,7 +55,7 @@ This course will provide you in an virtual hands-on session how to setup infrast
 		
 	* Types of IaC (imperative vs declarative)
 		* https://docs.microsoft.com/en-us/azure/architecture/framework/devops/iac
-	* Types of infrastructure in Azure (IaaS, Paas, SaaS)
+	* Types of infrastructure in Azure (IaaS, PaaS, SaaS)
 		* https://docs.microsoft.com/en-us/learn/modules/align-requirements-in-azure/3-service-models
 		* https://docs.microsoft.com/en-us/learn/modules/align-requirements-in-azure/4-iaas
 		* https://docs.microsoft.com/en-us/learn/modules/align-requirements-in-azure/5-paas
@@ -89,11 +89,11 @@ This course will provide you in an virtual hands-on session how to setup infrast
 		* https://docs.microsoft.com/en-us/learn/modules/secure-azure-resources-with-rbac/
 	* Specific Azure Resources in respect to IaC- networking, security, databases, VMs, etc. 
 		* https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/3-tour-of-azure-services
-		* (exercise) Create Sercise Principles Azure Cloud Shell
+		* (exercise) Create Security Principles via Azure Cloud Shell
 	* Cloud/Solution Architecture
 		* https://docs.microsoft.com/en-us/azure/architecture/
 		* https://docs.microsoft.com/en-us/learn/modules/azure-well-architected-security/
-		* (excersise) Create in Azure Cloud Shell -TBD
+		* (exercise) Create in Azure Cloud Shell -TBD
 
 * Part 3 - Setting up an IaC Environment (ARM, PowerShell, Azure CLI)
 	* Azure CLI
@@ -124,16 +124,16 @@ This course will provide you in an virtual hands-on session how to setup infrast
 			* https://docs.microsoft.com/en-us/learn/modules/create-azure-resource-manager-template-vs-code/ 
 			*  https://docs.microsoft.com/en-us/learn/modules/modify-azure-resource-manager-template-reuse/
 			* https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-best-practices
-			² (excersise) Create Key Vault
+			² (exersise) Create Key Vault
 			² (Azure CLI access to key vault) https://docs.microsoft.com/en-us/azure/key-vault/general/manage-with-cli2
 	* Powershell DSC 
 		* General principles 
 			* https://docs.microsoft.com/en-us/powershell/scripting/dsc/overview/authoringadvanced?view=powershell-7
-			* (excersise) Execute locally (on created VM) https://docs.microsoft.com/en-us/powershell/scripting/dsc/quickstarts/website-quickstart?view=powershell-7
+			* (exercise) Execute locally (on created VM) https://docs.microsoft.com/en-us/powershell/scripting/dsc/quickstarts/website-quickstart?view=powershell-7
 			* (Ansible) https://docs.microsoft.com/en-us/learn/modules/configure-infrastructure-azure-pipelines/
 			* (Ansible) https://docs.microsoft.com/en-us/azure/developer/ansible/getting-started-cloud-shell?toc=%2Fazure%2Fcloud-shell%2Ftoc.json&bc=%2Fazure%2Fbread%2Ftoc.json
 			* (Ansible) https://docs.microsoft.com/en-us/azure/developer/ansible/vm-configure 
-			* (excersise) Install IIS on created VM from portal via DSC extension (ARM TBD)
+			* (exercise) Install IIS on created VM from portal via DSC extension (ARM TBD)
 			* (Chef, Puppet) TBD
 			* https://docs.microsoft.com/en-us/powershell/scripting/dsc/getting-started/wingettingstarted?view=powershell-7
 		* Azure Automation(DSC, Runbooks, etc.)
@@ -148,7 +148,7 @@ This course will provide you in an virtual hands-on session how to setup infrast
 			* https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-powershell
 	* ARM in Visual Studio 
 		* Demo deploy from Visual Studio Code
-			* ARM Deploymentend example -TBD
+			* ARM Deployment example -TBD
 
 * Part 4 - IaC Automation Pipelines
 	* Configuration as a Code
@@ -171,7 +171,7 @@ This course will provide you in an virtual hands-on session how to setup infrast
 		* Service Principals and Managed Identity
 			* https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest
 			* https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals
-		* Differences between Linux and Windows in respect to the configuration (e.g. SSH vs Remote Povershell)
+		* Differences between Linux and Windows in respect to the configuration (e.g. SSH vs Remote PowerShell)
 			* https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/
 			* https://docs.microsoft.com/en-us/learn/modules/provision-database-azure-pipelines/
 			

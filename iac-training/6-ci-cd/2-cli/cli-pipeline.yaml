@@ -1,0 +1,27 @@
+trigger: none 
+
+# reuquire environemnt variable myPrefix 
+variables:
+  azure: ASG
+  rg: "$(myPrefix)-iac-via-pipeline2"
+
+steps:
+- task: AzureCLI@2
+  displayName: 'Azure CLI '
+  inputs:
+    azureSubscription: ASG
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+     az group create --name $(rg) --location eastus
+
+- task: AzureCLI@2
+  displayName: 'Azure CLI  create VM'
+  inputs:
+    azureSubscription: ASG
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+     az vm create --resource-group $(rg)  --name vbiacvm1  --image UbuntuLTS --generate-ssh-keys --output json   --admin-username  iacadmin --verbose
+
+#end
