@@ -47,7 +47,7 @@ This course will provide you in an virtual hands-on session how to setup infrast
 * Part 5 - Practical Hints and Real life scenarios
 	* In this session we will try to answer any Q&A, Focus on areas which require more attention based on the group skills. Looking at real life examples and lessons learned from real projects. Based on the time we will cover some additional topics like lock resources, tag Resources, move resources or  Modern Engineering and IaC.
 
-# Training Topics
+# Training Topics additional sources
 * Part1 - What is Infrastructure as Code (IaC)
 	* Introduction to IaC
 		* Video - Infrastructure as code: What is it? Why is it important? (MG: we could get inspired by this introduction to IaC video – it's important to show why it is important. Someday later, we could record a video for this 😊. In the meantime, I can write down the content from the videos to make a document for this) 
