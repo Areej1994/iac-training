@@ -1,11 +1,12 @@
 trigger: none 
 
-# reuquire environemnt variable myPrefix 
+# require environment variable myPrefix to be defined in pipeline
 variables:
   azure: ASG
   rg: "$(myPrefix)-iac-via-pipeline2"
 
 steps:
+# create resource group via Azure CLI
 - task: AzureCLI@2
   displayName: 'Azure CLI '
   inputs:
@@ -15,6 +16,7 @@ steps:
     inlineScript: |
      az group create --name $(rg) --location eastus
 
+# create VM via Azure CLI
 - task: AzureCLI@2
   displayName: 'Azure CLI  create VM'
   inputs:
