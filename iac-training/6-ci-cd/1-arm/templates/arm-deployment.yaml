@@ -1,20 +1,22 @@
 parameters:
   serviceConnection: ""
   subscription: ""
-  env: ""
-  rg: ""
+  environment: ""
+  resourceGroup: ""
   location: "East US"
+  templateFile: ""
+  parameterFile: ""
 
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
-  displayName: 'ARM Template deployment ${{ parameters.env }}'
+  displayName: 'ARM Template deployment ${{ parameters.environment }}'
   inputs:
     azureResourceManagerConnection: ${{ parameters.serviceConnection }}
     subscriptionId: '${{ parameters.subscription }}'
-    resourceGroupName: '${{ parameters.rg }}'
+    resourceGroupName: '${{ parameters.resourceGroup }}'
     location: '${{ parameters.location }}'
-    csmFile: $(Pipeline.Workspace)/arm/10-parameter-files.json
-    csmParametersFile: $(Pipeline.Workspace)/arm/10-parameters.${{ parameters.env }}.json
+    csmFile: '${{ parameters.templateFile }}'
+    csmParametersFile: '${{ parameters.parameterFile }}'
     deploymentOutputs: 'arm_outputs'
 - powershell: |
    echo '$(arm_outputs)'
