@@ -16,7 +16,7 @@ stages:
           - task: PublishPipelineArtifact@1
             displayName: 'Publish Pipeline Artifact'
             inputs:
-              targetPath: '$(System.DefaultWorkingDirectory)'
+              targetPath: '$(System.DefaultWorkingDirectory)/4-arm-templates/1-arm-syntax/'
               artifact: 'arm'
               publishLocation: 'pipeline'
   - stage: arm_dev
@@ -35,9 +35,11 @@ stages:
                 parameters: 
                   serviceConnection: $(azure)
                   subscription: $(subscription)
-                  env: $(env)
-                  rg: $(rg)
+                  environment: $(env)
+                  resourceGroup: $(rg)
                   location: "East US"
+                  templateFile: $(Pipeline.Workspace)/arm/10-parameter-files.json
+                  parameterFile: $(Pipeline.Workspace)/arm/10-parameters.$(env).json
 
   - stage: arm_prd
     displayName: "ARM Deployment PRD"  
@@ -52,9 +54,11 @@ stages:
             deploy:
               steps:
               - template: templates/arm-deployment.yaml
-                parameters: 
+                parameters:  
                   serviceConnection: $(azure)
                   subscription: $(subscription)
-                  env: $(env)
-                  rg: $(rg)
-                  location: "East US"      
+                  environment: $(env)
+                  resourceGroup: $(rg)
+                  location: "East US"
+                  templateFile: $(Pipeline.Workspace)/arm/10-parameter-files.json
+                  parameterFile: $(Pipeline.Workspace)/arm/10-parameters.$(env).json  
