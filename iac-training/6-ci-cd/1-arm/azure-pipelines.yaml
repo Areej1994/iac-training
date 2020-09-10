@@ -16,7 +16,7 @@ stages:
           - task: PublishPipelineArtifact@1
             displayName: 'Publish Pipeline Artifact'
             inputs:
-              targetPath: '$(System.DefaultWorkingDirectory)/4-arm-templates/1-arm-syntax/'
+              targetPath: '$(System.DefaultWorkingDirectory)/iac-training/4-arm-templates/1-arm-syntax/'
               artifact: 'arm'
               publishLocation: 'pipeline'
   - stage: arm_dev
