@@ -200,4 +200,5 @@ This course will provide you in an virtual hands-on session how to setup infrast
 			* Modern Engineering Site  (https://mep.avanade.com)
 			* Avanade Docs (https://docs.avanade.com)
 			* Cloud Solution Studio (https://www.cloudsolutionstudio.com/)
-
+		* Microsoft Code sample
+			* List of LogicApp examples (https://docs.microsoft.com/en-us/samples/browse/?expanded=azure&products=azure-logic-apps)
