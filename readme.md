@@ -202,3 +202,6 @@ This course will provide you in an virtual hands-on session how to setup infrast
 			* Cloud Solution Studio (https://www.cloudsolutionstudio.com/)
 		* Microsoft Code sample
 			* List of LogicApp examples (https://docs.microsoft.com/en-us/samples/browse/?expanded=azure&products=azure-logic-apps)
+		* Microsoft reference architecture
+			* Hub-spoke deployment (https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke#deploy-the-solution)
+			* Hub-spoke network topology (https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke)

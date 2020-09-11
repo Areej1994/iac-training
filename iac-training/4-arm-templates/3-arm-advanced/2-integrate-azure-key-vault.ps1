@@ -7,16 +7,16 @@
 # The variables
 $prefix = "vb"
 $location = "eastus"
-$resourceGroupName = "$prefix-iac-taining-cli-rg" # pick something cool
+$resourceGroupName = "$prefix-iac-taining-kv-rg" # pick something cool
 $templateKeyVaultFileLocation = ".\2.1-integrate-azure-key-vault.json" # this is where your template lives
 $templateFileLocation = ".\2.2-reference-to-azure-key-vault.json" # this is where the keyvault is referenced
-$keyVaultName = "$prefix-modernengineeringkv02" # pick something unique and cool
+$keyVaultName = "$prefix-mep-iac-test-kv02" # pick something unique and cool
 # Use Get-AzAdUser or Get-AzAdServicePrincipal to find one in your subscription
 $objectId = (Get-AzAdUser -Mail viliam.batka@accenture.com).Id  # find user by email
 
 # Create a resource group
 New-AzResourceGroup -Name $resourceGroupName -Location "$location"
-yes
+
 # Start arm template deployment
 # proper pass of the cercer
 New-AzResourceGroupDeployment -Name "deploy-the-keyvault" `
