@@ -10,13 +10,13 @@ This course will provide you in an virtual hands-on session how to setup infrast
 	* 09:00 – 10:00  Part1 - What is Infrastructure as Code (IaC)
 	* 10:00 – 11:30  Part2 - Microsoft Azure Automation 
 	* 11:30 – 12:30  Lunch Break 
-	* 12:30 – 15:30  Part 3 - Setting up an IaC Environment (ARM, PowerShell, Azure CLI) 
+	* 12:30 – 15:30  Part 3 - Setting up an IaC Environment (PowerShell, Azure CLI, API, ARM) 
 	* 15:30 – 16:00  Q&A 
 * Day 2:
 	* 09:00 – 09:20  Recap 
-	* 09:20 – 11:30  Part 4a - IaC Automation Pipelines 
+	* 09:20 – 11:30  Part 4a - ARM Templates 
 	* 11:30 – 12:30  Lunch Break 
-	* 12:30 – 13:00  Part 4b - IaC Automation Pipelines (continued) 
+	* 12:30 – 13:00  Part 4b - IaC Automation Pipelines
 	* 13:00 – 13:30  Q&A 
 	* 13:30 – 16:00  Part 5 - Practical Hints and Real life scenarios
 
